@@ -10,7 +10,6 @@
     "cors": "^2.8.5",
     "cra-template": "1.2.0",
     "express": "^4.21.2",
-    "gh-pages": "^6.3.0",
     "https-browserify": "^1.0.0",
     "install": "^0.13.0",
     "json2csv": "^6.0.0-alpha.2",
@@ -52,5 +51,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
