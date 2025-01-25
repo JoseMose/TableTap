@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/TableTap/static/css/main.f3b12e6c.css",
+    "main.js": "/TableTap/static/js/main.583bff2d.js",
+    "static/js/375.fc5018b0.chunk.js": "/TableTap/static/js/375.fc5018b0.chunk.js",
+    "static/js/547.86195f45.chunk.js": "/TableTap/static/js/547.86195f45.chunk.js",
+    "static/js/147.ae7ddb8a.chunk.js": "/TableTap/static/js/147.ae7ddb8a.chunk.js",
+    "static/js/922.ad9dd2ec.chunk.js": "/TableTap/static/js/922.ad9dd2ec.chunk.js",
+    "static/js/179.98ee4e31.chunk.js": "/TableTap/static/js/179.98ee4e31.chunk.js",
+    "static/js/670.7bf4a65e.chunk.js": "/TableTap/static/js/670.7bf4a65e.chunk.js",
+    "static/js/887.44f80418.chunk.js": "/TableTap/static/js/887.44f80418.chunk.js",
+    "static/js/462.8bdbc086.chunk.js": "/TableTap/static/js/462.8bdbc086.chunk.js",
+    "static/js/686.46ddc229.chunk.js": "/TableTap/static/js/686.46ddc229.chunk.js",
+    "static/js/306.1f4c18ea.chunk.js": "/TableTap/static/js/306.1f4c18ea.chunk.js",
+    "static/js/901.3546a017.chunk.js": "/TableTap/static/js/901.3546a017.chunk.js",
+    "static/js/163.30ee36f4.chunk.js": "/TableTap/static/js/163.30ee36f4.chunk.js",
+    "index.html": "/TableTap/index.html",
+    "main.f3b12e6c.css.map": "/TableTap/static/css/main.f3b12e6c.css.map",
+    "main.583bff2d.js.map": "/TableTap/static/js/main.583bff2d.js.map",
+    "375.fc5018b0.chunk.js.map": "/TableTap/static/js/375.fc5018b0.chunk.js.map",
+    "547.86195f45.chunk.js.map": "/TableTap/static/js/547.86195f45.chunk.js.map",
+    "147.ae7ddb8a.chunk.js.map": "/TableTap/static/js/147.ae7ddb8a.chunk.js.map",
+    "922.ad9dd2ec.chunk.js.map": "/TableTap/static/js/922.ad9dd2ec.chunk.js.map",
+    "179.98ee4e31.chunk.js.map": "/TableTap/static/js/179.98ee4e31.chunk.js.map",
+    "670.7bf4a65e.chunk.js.map": "/TableTap/static/js/670.7bf4a65e.chunk.js.map",
+    "887.44f80418.chunk.js.map": "/TableTap/static/js/887.44f80418.chunk.js.map",
+    "462.8bdbc086.chunk.js.map": "/TableTap/static/js/462.8bdbc086.chunk.js.map",
+    "686.46ddc229.chunk.js.map": "/TableTap/static/js/686.46ddc229.chunk.js.map",
+    "306.1f4c18ea.chunk.js.map": "/TableTap/static/js/306.1f4c18ea.chunk.js.map",
+    "901.3546a017.chunk.js.map": "/TableTap/static/js/901.3546a017.chunk.js.map",
+    "163.30ee36f4.chunk.js.map": "/TableTap/static/js/163.30ee36f4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f3b12e6c.css",
+    "static/js/main.583bff2d.js"
+  ]
+}
