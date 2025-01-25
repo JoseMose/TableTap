@@ -1,16 +1,8 @@
+// filepath: vite.config.js
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/TableTap/', // Add this line
-  plugins: [vue()],
-  server: {
-    port: 3001,
-    open: true,
-  },
-  resolve: {
-    alias: {
-      '@': '/src',
-    },
-  },
+  base: '/TableTap/', // Set the base path to your repository name
+  plugins: [react()],
 })
