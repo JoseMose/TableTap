@@ -3,7 +3,8 @@ import axios from 'axios';
 import { io } from 'socket.io-client';
 import './App.css';
 
-const socket = io('http://localhost:3001');
+const firebaseHostingUrl = "https://tabletap-27cd3.web.app"; // Replace with your actual Firebase Hosting URL
+const socket = io(firebaseHostingUrl);
 
 const KitchenComponent = () => {
   const [orders, setOrders] = useState([]);
@@ -11,7 +12,7 @@ const KitchenComponent = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/orders');
+        const response = await axios.get(`${firebaseHostingUrl}/api/orders`);
         setOrders(response.data);
       } catch (error) {
         console.error('Error fetching orders:', error);
@@ -29,9 +30,9 @@ const KitchenComponent = () => {
 
   const updateOrderStatus = async (tableNumber, status) => {
     try {
-      await axios.put('http://localhost:3001/update-order-status', { tableNumber, status });
+      await axios.put(`${firebaseHostingUrl}/api/update-order-status`, { tableNumber, status });
       // Fetch updated orders after status change
-      const response = await axios.get('http://localhost:3001/orders');
+      const response = await axios.get(`${firebaseHostingUrl}/api/orders`);
       setOrders(response.data);
     } catch (error) {
       console.error('Error updating order status:', error);

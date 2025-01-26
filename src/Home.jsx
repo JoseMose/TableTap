@@ -5,10 +5,11 @@ import './App.css';
 
 const Home = () => {
   const navigate = useNavigate();
-  const [generatedNumbers, setGeneratedNumbers] = useState(new Set());
+  const [, setGeneratedNumbers] = useState(new Set());
   const [nextTableNumber, setNextTableNumber] = useState(101);
   const [tableNumbers, setTableNumbers] = useState([]);
   const [showQRCodes, setShowQRCodes] = useState(false);
+  const firebaseHostingUrl = "https://tabletap-27cd3.web.app"; // Replace with your actual Firebase Hosting URL
 
   useEffect(() => {
     // Generate initial table numbers 1-100
@@ -59,7 +60,7 @@ const Home = () => {
           {tableNumbers.map(number => (
             <div key={number} className="qr-code">
               <h2>Table {number}</h2>
-              <QRCode value={`http://localhost:3000/form/${number}`} />
+              <QRCode value={`${firebaseHostingUrl}/form/${number}`} />
             </div>
           ))}
         </div>

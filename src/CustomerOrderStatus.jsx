@@ -4,7 +4,8 @@ import axios from 'axios';
 import { io } from 'socket.io-client';
 import './App.css';
 
-const socket = io('http://localhost:3001');
+const firebaseHostingUrl = "https://tabletap-27cd3.web.app"; // Replace with your actual Firebase Hosting URL
+const socket = io(firebaseHostingUrl);
 
 const CustomerOrderStatus = () => {
   const { tableNumber } = useParams();
@@ -15,7 +16,7 @@ const CustomerOrderStatus = () => {
   useEffect(() => {
     const fetchOrder = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/order-status/${tableNumber}`);
+        const response = await axios.get(`${firebaseHostingUrl}/api/order-status/${tableNumber}`);
         setOrder(response.data);
       } catch (error) {
         console.error('Error fetching order:', error);
@@ -36,10 +37,10 @@ const CustomerOrderStatus = () => {
   const handleAddFood = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3001/add-food', { tableNumber: parseInt(tableNumber), additionalFood });
+      await axios.post(`${firebaseHostingUrl}/api/add-food`, { tableNumber: parseInt(tableNumber), additionalFood });
       alert('Food added to order');
       setAdditionalFood('');
-      const response = await axios.get(`http://localhost:3001/order-status/${tableNumber}`);
+      const response = await axios.get(`${firebaseHostingUrl}/api/order-status/${tableNumber}`);
       setOrder(response.data);
     } catch (error) {
       console.error('Error adding food to order:', error);

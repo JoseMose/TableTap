@@ -9,11 +9,12 @@ const CompletedOrders = () => {
   const [completedOrders, setCompletedOrders] = useState([]);
   const [tableUsage, setTableUsage] = useState({});
   const [orderFrequency, setOrderFrequency] = useState({});
+  const firebaseHostingUrl = "https://tabletap-27cd3.web.app"; // Replace with your actual Firebase Hosting URL
 
   useEffect(() => {
     const fetchCompletedOrders = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/completed-orders');
+        const response = await axios.get(`${firebaseHostingUrl}/api/completed-orders`);
         setCompletedOrders(response.data);
         processStatistics(response.data);
       } catch (error) {

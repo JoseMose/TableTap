@@ -7,11 +7,12 @@ import PrivateRoute from './PrivateRoute';
 
 const Home = lazy(() => import('./Home'));
 const QRCodeComponent = lazy(() => import('./QRCodeComponent'));
-const QRCodeComponent2 = lazy(() => import('./QRCodeComponent 2'));
+const QRCodeComponent2 = lazy(() => import('./QRCodeComponent2'));
 const FormComponent = lazy(() => import('./FormComponent'));
 const LoginComponent = lazy(() => import('./LoginComponent'));
 const KitchenComponent = lazy(() => import('./KitchenComponent'));
 const CustomerOrderStatus = lazy(() => import('./CustomerOrderStatus'));
+const CustomerOrderStatus2 = lazy(() => import('./CustomerOrderStatus2'));
 const CompletedOrdersComponent = lazy(() => import('./CompletedOrdersComponent'));
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <Route path="/form/:tableNumber" element={<FormComponent />} /> {/* Accessible to anyone */}
           <Route path="/kitchen" element={<PrivateRoute><KitchenComponent /></PrivateRoute>} />
           <Route path="/order-status/:tableNumber" element={<CustomerOrderStatus />} /> {/* Accessible to anyone */}
+          <Route path="/order-status2/:tableNumber" element={<CustomerOrderStatus2 />} /> {/* Accessible to anyone */}
           <Route path="/completed-orders" element={<PrivateRoute><CompletedOrdersComponent /></PrivateRoute>} />
         </Routes>
       </Suspense>

@@ -11,11 +11,12 @@ const FormComponent = () => {
   const [orderStatus, setOrderStatus] = useState('No Order');
   const [existingOrderName, setExistingOrderName] = useState('');
   const [showThankYou, setShowThankYou] = useState(false);
+  const firebaseHostingUrl = "https://tabletap-27cd3.web.app"; // Replace with your actual Firebase Hosting URL
 
   useEffect(() => {
     const checkOrderStatus = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/order-status/${tableNumber}`);
+        const response = await axios.get(`${firebaseHostingUrl}/api/order-status/${tableNumber}`);
         setOrderStatus(response.data.status);
         setExistingOrderName(response.data.name || '');
         if (response.data.status === 'Completed') {
@@ -33,7 +34,7 @@ const FormComponent = () => {
     e.preventDefault();
     const orderData = { tableNumber: parseInt(tableNumber), name, order };
     try {
-      await axios.post('http://localhost:3001/submit-order', orderData);
+      await axios.post(`${firebaseHostingUrl}/api/submit-order`, orderData);
       alert('Order submitted successfully');
       navigate(`/order-status/${tableNumber}`);
     } catch (error) {
