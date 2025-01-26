@@ -7,6 +7,7 @@ import PrivateRoute from './PrivateRoute';
 
 const Home = lazy(() => import('./Home'));
 const QRCodeComponent = lazy(() => import('./QRCodeComponent'));
+const QRCodeComponent2 = lazy(() => import('./QRCodeComponent 2'));
 const FormComponent = lazy(() => import('./FormComponent'));
 const LoginComponent = lazy(() => import('./LoginComponent'));
 const KitchenComponent = lazy(() => import('./KitchenComponent'));
@@ -31,10 +32,11 @@ function App() {
           <Route path="/login" element={<LoginComponent />} />
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />
-          <Route path="/qrcode/:tableNumber" element={<PrivateRoute><QRCodeComponent /></PrivateRoute>} />
-          <Route path="/form/:tableNumber" element={<PrivateRoute><FormComponent /></PrivateRoute>} />
+          <Route path="/qrcode/:tableNumber" element={<QRCodeComponent />} /> {/* Accessible to anyone */}
+          <Route path="/qrcode2/:tableNumber" element={<QRCodeComponent2 />} /> {/* Accessible to anyone */}
+          <Route path="/form/:tableNumber" element={<FormComponent />} /> {/* Accessible to anyone */}
           <Route path="/kitchen" element={<PrivateRoute><KitchenComponent /></PrivateRoute>} />
-          <Route path="/order-status/:tableNumber" element={<CustomerOrderStatus />} />
+          <Route path="/order-status/:tableNumber" element={<CustomerOrderStatus />} /> {/* Accessible to anyone */}
           <Route path="/completed-orders" element={<PrivateRoute><CompletedOrdersComponent /></PrivateRoute>} />
         </Routes>
       </Suspense>

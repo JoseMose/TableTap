@@ -3,10 +3,11 @@ import QRCode from "react-qr-code";
 import { useParams } from 'react-router-dom';
 import './App.css';
 
-const QRCodeComponent = () => {
+const QRCodeComponent2 = () => {
   const { tableNumber } = useParams();
-  const url = `http://localhost:3000/form/${tableNumber}`;
-  const statusUrl = `http://localhost:3000/order-status/${tableNumber}`;
+  const firebaseHostingUrl = "https://tabletap-27cd3.web.app"; // Replace with your actual Firebase Hosting URL
+  const url = `${firebaseHostingUrl}/form/${tableNumber}`;
+  const statusUrl = `${firebaseHostingUrl}/order-status/${tableNumber}`;
 
   return (
     <div className="container">
@@ -17,4 +18,4 @@ const QRCodeComponent = () => {
   );
 };
 
-export default QRCodeComponent;
+export default QRCodeComponent2;
