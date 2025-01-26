@@ -19,7 +19,7 @@ const KitchenComponent = () => {
       }
     };
 
-    fetchOrders();ss
+    fetchOrders();
     socket.on('order-updated', fetchOrders);
 
     return () => {

@@ -5,7 +5,7 @@ import 'chart.js/auto';
 import Papa from 'papaparse';
 import './App.css';
 
-const CompletedOrdersComponent2 = () => {
+const CompletedOrders = () => {
   const [completedOrders, setCompletedOrders] = useState([]);
   const [tableUsage, setTableUsage] = useState({});
   const [orderFrequency, setOrderFrequency] = useState({});
@@ -116,4 +116,4 @@ const CompletedOrdersComponent2 = () => {
   );
 };
 
-export default CompletedOrdersComponent2;s
+export default CompletedOrders;
