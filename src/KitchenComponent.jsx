@@ -1,4 +1,3 @@
-// filepath: /Users/josephesfandiari/Desktop/Table Tap/tabletap/src/KitchenComponent.jsx
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { io } from "socket.io-client";
@@ -14,7 +13,11 @@ const KitchenComponent = () => {
     const fetchOrders = async () => {
       try {
         const response = await axios.get(`${firebaseFunctionsUrl}/api/orders`);
-        setOrders(response.data);
+        if (Array.isArray(response.data)) {
+          setOrders(response.data);
+        } else {
+          console.error("API response is not an array:", response.data);
+        }
       } catch (error) {
         console.error("Error fetching orders:", error);
       }
@@ -34,7 +37,11 @@ const KitchenComponent = () => {
       await axios.put(`${firebaseFunctionsUrl}/api/update-order-status`, { tableNumber, status });
       // Fetch updated orders after status change
       const response = await axios.get(`${firebaseFunctionsUrl}/api/orders`);
-      setOrders(response.data);
+      if (Array.isArray(response.data)) {
+        setOrders(response.data);
+      } else {
+        console.error("API response is not an array:", response.data);
+      }
     } catch (error) {
       console.error("Error updating order status:", error);
       alert("Failed to update order status");

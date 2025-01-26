@@ -12,7 +12,7 @@ const CustomerOrderStatus = () => {
   useEffect(() => {
     const fetchOrderDetails = async () => {
       try {
-        const response = await axios.get(`${firebaseFunctionsUrl}/api/order-status/${tableNumber}`);
+        const response = await axios.get(`${firebaseFunctionsUrl}/order-status/${tableNumber}`);
         setOrderDetails(response.data);
       } catch (error) {
         console.error("Error fetching order details:", error);
