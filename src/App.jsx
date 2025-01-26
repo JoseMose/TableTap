@@ -1,6 +1,8 @@
 import './App.css';
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { auth } from './firebase';
+import { onAuthStateChanged } from 'firebase/auth';
 import PrivateRoute from './PrivateRoute';
 
 const Home = lazy(() => import('./Home'));
@@ -12,6 +14,16 @@ const CustomerOrderStatus = lazy(() => import('./CustomerOrderStatus'));
 const CompletedOrdersComponent = lazy(() => import('./CompletedOrdersComponent'));
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   return (
     <Router>
       <Suspense fallback={<div>Loading...</div>}>

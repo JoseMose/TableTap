@@ -1,35 +1,47 @@
 import React, { useState } from 'react';
+import { auth } from './firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import './App.css';
 
 const LoginComponent = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Simple authentication logic (replace with real authentication)
-    if (username === 'admin' && password === 'password') {
-      localStorage.setItem('authenticated', 'true');
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
       navigate('/home');
-    } else {
-      alert('Invalid credentials');
+    } catch (err) {
+      setError(err.message);
     }
   };
 
   return (
-    <div className="container">
-      <h1>Login</h1>
+    <div>
+      <h2>Login</h2>
       <form onSubmit={handleLogin}>
-        <div className="form-group">
-          <label>Username:</label>
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+        <div>
+          <label>Email:</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
         </div>
-        <div className="form-group">
+        <div>
           <label>Password:</label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
         </div>
+        {error && <p>{error}</p>}
         <button type="submit">Login</button>
       </form>
     </div>
