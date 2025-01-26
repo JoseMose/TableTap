@@ -16,7 +16,6 @@ const KitchenComponent = lazy(() => import('./KitchenComponent'));
 const KitchenComponent2 = lazy(() => import('./KitchenComponent2'));
 const CustomerOrderStatus = lazy(() => import('./CustomerOrderStatus'));
 const CustomerOrderStatus2 = lazy(() => import('./CustomerOrderStatus2'));
-const CompletedOrdersComponent = lazy(() => import('./CompletedOrdersComponent'));
 const CompletedOrdersComponent2 = lazy(() => import('./CompletedOrdersComponent2'));
 
 function App() {
@@ -44,8 +43,7 @@ function App() {
           <Route path="/kitchen2" element={<PrivateRoute><KitchenComponent2 /></PrivateRoute>} />
           <Route path="/order-status/:tableNumber" element={<CustomerOrderStatus />} /> {/* Accessible to anyone */}
           <Route path="/order-status2/:tableNumber" element={<CustomerOrderStatus2 />} /> {/* Accessible to anyone */}
-          <Route path="/completed-orders" element={<PrivateRoute><CompletedOrdersComponent /></PrivateRoute>} />
-          <Route path="/completed-orders2" element={<PrivateRoute><CompletedOrdersComponent2 /></PrivateRoute>} />
+          <Route path="/completed-orders2" element={<PrivateRoute><CompletedOrdersComponent /></PrivateRoute>} />
         </Routes>
       </Suspense>
     </Router>
