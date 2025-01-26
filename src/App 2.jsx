@@ -12,7 +12,6 @@ const FormComponent = lazy(() => import('./FormComponent'));
 const LoginComponent = lazy(() => import('./LoginComponent'));
 const KitchenComponent = lazy(() => import('./KitchenComponent'));
 const CustomerOrderStatus = lazy(() => import('./CustomerOrderStatus'));
-const CustomerOrderStatus2 = lazy(() => import('./CustomerOrderStatus2'));
 const CompletedOrdersComponent = lazy(() => import('./CompletedOrdersComponent'));
 
 function App() {
