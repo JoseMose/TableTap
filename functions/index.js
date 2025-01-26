@@ -48,4 +48,5 @@ app.put("/api/update-order-status", async (req, res) => {
   }
 });
 
+// Export the Express app as a single Cloud Function
 exports.api = functions.https.onRequest(app);

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
 
-const firebaseFunctionsUrl = "https://us-central1-YOUR_PROJECT_ID.cloudfunctions.net/api"; // Replace with your actual Firebase Functions URL
+const firebaseFunctionsUrl = "https://us-central1-tabletap-27cd3.cloudfunctions.net/api"; // Replace with your actual Firebase Functions URL
 
 const CustomerOrderStatus = () => {
   const { tableNumber } = useParams();
