@@ -1,40 +1,28 @@
-// filepath: /Users/josephesfandiari/Desktop/Table Tap/tabletap/functions/.eslintrc.js
 module.exports = {
   env: {
-    node: true,
     es6: true,
+    node: true,
+  },
+  parserOptions: {
+    "ecmaVersion": 2018,
   },
   extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
+    "eslint:recommended",
+    "google",
   ],
-  parserOptions: {
-    ecmaVersion: 2020,
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
-  settings: {
-    react: {
-      version: 'detect',
-    },
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx'],
-      },
-    },
-  },
   rules: {
-    'no-unused-vars': 'warn',
-    'no-undef': 'error',
+    "no-restricted-globals": ["error", "name", "length"],
+    "prefer-arrow-callback": "error",
+    "quotes": ["error", "double", {"allowTemplateLiterals": true}],
   },
   overrides: [
     {
-      files: ['*.js', '*.jsx'],
-      rules: {
-        // Add any custom rules for JavaScript files here
+      files: ["**/*.spec.*"],
+      env: {
+        mocha: true,
       },
+      rules: {},
     },
   ],
+  globals: {},
 };
