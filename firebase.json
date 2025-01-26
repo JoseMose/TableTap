@@ -5,10 +5,15 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
-  },
-  "functions": {
-    "source": "functions",
-    "runtime": "nodejs14"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "error_page": {
+      "404": "/404.html"
+    }
   }
 }
